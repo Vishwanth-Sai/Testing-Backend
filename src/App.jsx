@@ -49,7 +49,7 @@ function App() {
   const HandleDelete = async(u) =>{
     const resp = await supabase.from("profiles").delete().eq("id", u.id);
     if(resp.error){
-      setMsg(resp.error.message)
+      console.log(resp.error.message)
       return;
     }
     setMsg("user deleted")
